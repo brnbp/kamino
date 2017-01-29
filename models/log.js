@@ -1,7 +1,13 @@
-function LogModel(){
-  this.latests = () => 'latests logs here'
+class LogModel {
+  latests() {
+    return 'latests logs here'
+  }
 
-  this.one = (id) => [{id: id}]
+  one(id) {
+    return [{
+      id: id
+    }]
+  }
 }
 
 module.exports = LogModel

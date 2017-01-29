@@ -1,6 +1,4 @@
-const express = require('express');
-const router = express.Router();
-
+const router = require('express').Router();
 const responder = require('../response')()
 
 const LogModel = require('../../models/log')

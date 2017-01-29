@@ -1,12 +1,21 @@
-const response = require('./response')
+const ApiController = require('./api')
 
-function LogsController(LogModel) {
+class LogsController extends ApiController {
 
-  this.latests = () => response.success(LogModel.latests())
-  //this.latests = () => response.error('all latests feeds here')
-  //this.latests = () => response.notFound('latests feeds not founded')
+  constructor(LogModel) {
+    super()
+    this.LogModel = LogModel
+  }
 
-  this.one = (id) => response.success(LogModel.one(id))
+  latests() {
+    return super.success(this.LogModel.latests())
+  }
+  //latests() { return response.error('all latests logs here') }
+  //latests() { return response.notFound('latests logs not founded') }
+
+  one(id) {
+    return super.success(this.LogModel.one(id))
+  }
 
 }
 
